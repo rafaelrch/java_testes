@@ -23,10 +23,12 @@ public class Main {
 
         System.out.println(produto1);
 
+        System.out.println(" ");
         System.out.println("Enter the number of products to be added in stock: ");
         produto1.addProducts(sc.nextInt());
         System.out.println("Updated data: "+ produto1);
 
+        System.out.println(" ");
         System.out.println("Enter the number of products to be removed from stock: ");
         produto1.removeProducts(sc.nextInt());
         System.out.println("Updated data: "+ produto1);
