@@ -1,6 +1,6 @@
 package application;
 
-import entities.Triangle;
+import entities.Product;
 
 import java.util.Scanner;
 
@@ -8,37 +8,30 @@ public class Main {
 
     public static void main(String[] args){
 
+        Product produto1 = new Product();
+
         Scanner sc = new Scanner(System.in);
-        Triangle x, y;
+        System.out.println("Enter product data");
+        System.out.print("Name: ");
+        produto1.name = sc.nextLine();
 
-        x = new Triangle();
-        y = new Triangle();
+        System.out.print("Price: ");
+        produto1.price = sc.nextDouble();
 
-        System.out.println("Enter the measures of triangle X: ");
-        x.a = sc.nextDouble();
-        x.b = sc.nextDouble();
-        x.c = sc.nextDouble();
+        System.out.print("Quantity in stock: ");
+        produto1.qntd = sc.nextInt();
 
-        System.out.println("Enter the measures of triangle Y: ");
-        y.a = sc.nextDouble();
-        y.b = sc.nextDouble();
-        y.c = sc.nextDouble();
+        System.out.println(produto1);
 
+        System.out.println("Enter the number of products to be added in stock: ");
+        produto1.addProducts(sc.nextInt());
+        System.out.println("Updated data: "+ produto1);
 
-        double areaX = x.area();
-        double areaY = y.area();
+        System.out.println("Enter the number of products to be removed from stock: ");
+        produto1.removeProducts(sc.nextInt());
+        System.out.println("Updated data: "+ produto1);
 
-        System.out.printf("Triangle X area: %.4f%n", areaX);
-        System.out.printf("Triangle Y area: %.4f%n", areaY);
-
-        if (areaX > areaY){
-            System.out.println("Larger area: X");
-        }else {
-            System.out.println("Larger area: Y");
-        }
 
         sc.close();
-
-
     }
 }
